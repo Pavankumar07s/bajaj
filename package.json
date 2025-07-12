@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
-    "load-docs": "node --experimental-modules --loader ts-node/esm lib/load-chunk-file.js"
+    "load-docs": "node --experimental-modules --loader ts-node/esm lib/load-chunk-file.js",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@datastax/astra-db-ts": "^2.0.1",
